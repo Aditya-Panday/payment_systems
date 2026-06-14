@@ -9,9 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@paypal/paypal-server-sdk": "^2.4.0",
+    "@paypal/react-paypal-js": "^10.0.0",
     "@stripe/react-stripe-js": "^6.6.0",
     "@stripe/stripe-js": "^9.8.0",
     "next": "16.2.9",
+    "paypal-rest-sdk": "^1.8.1",
     "paytmchecksum": "^1.5.1",
     "razorpay": "^2.9.6",
     "react": "19.2.4",
@@ -21,6 +24,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/paypal-rest-sdk": "^1.7.9",
     "@types/paytmchecksum": "^1.5.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
