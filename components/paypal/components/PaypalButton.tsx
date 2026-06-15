@@ -31,9 +31,9 @@ const PaypalButton = () => {
       <button
         onClick={handlePayment}
         disabled={loading}
-        className="flex items-center gap-3 bg-[#FFC439] hover:bg-[#f0b429] disabled:opacity-60 disabled:cursor-not-allowed text-[#003087] font-bold px-8 py-3 rounded-full text-lg transition-all shadow-md"
+        // className="flex items-center gap-3 bg-[#FFC439] hover:bg-[#f0b429] disabled:opacity-60 disabled:cursor-not-allowed text-[#003087] font-bold px-8 py-3 rounded-full text-lg transition-all shadow-md"
       >
-        {loading ? (
+        {/* {loading ? (
           <span className="animate-spin rounded-full h-5 w-5 border-b-2 border-[#003087]" />
         ) : (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -46,7 +46,7 @@ const PaypalButton = () => {
               fill="#009cde"
             />
           </svg>
-        )}
+        )} */}
         {loading ? "Redirecting to PayPal..." : "Pay with PayPal"}
       </button>
 

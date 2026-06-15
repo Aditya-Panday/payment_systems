@@ -1,4 +1,8 @@
 import React from "react";
+import PaytmButton from "../paytm/components/PaytmButton";
+import PaypalButton from "../paypal/components/PaypalButton";
+import RajorPayButton from "../rajorPay/component/RajorPayButton";
+import StripePayButtonSecond from "../stripe/components/StripePayButtonSecond";
 
 export type Gateway = {
   id: string;
@@ -14,10 +18,20 @@ export type Gateway = {
 
 type PaymentCardProps = {
   gateway: Gateway;
-  onPayNow: (id: string) => void;
 };
 
-export default function PaymentCard({ gateway, onPayNow }: PaymentCardProps) {
+const ButtonHandler: Record<string, React.ReactNode> = {
+  paytm: <PaytmButton />,
+  stripe: <StripePayButtonSecond />,
+  paypal: <PaypalButton />,
+  razorpay: <RajorPayButton />,
+  phonepe: <RajorPayButton />,
+  amazonpay: <RajorPayButton />,
+  cashfree: <RajorPayButton />,
+  klarna: <RajorPayButton />,
+};
+
+export default function PaymentCard({ gateway }: PaymentCardProps) {
   return (
     <div
       className={`
@@ -71,7 +85,6 @@ export default function PaymentCard({ gateway, onPayNow }: PaymentCardProps) {
 
       {/* Pay Now Button */}
       <button
-        onClick={() => onPayNow(gateway.id)}
         className={`
           w-full py-2.5 rounded-xl text-[13px] font-medium
           border border-white/[0.18] bg-white/[0.07] text-white/85
@@ -91,7 +104,7 @@ export default function PaymentCard({ gateway, onPayNow }: PaymentCardProps) {
         >
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
         </svg>
-        Pay Now
+        {ButtonHandler[gateway.id]}
       </button>
     </div>
   );

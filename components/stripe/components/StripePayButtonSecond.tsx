@@ -22,14 +22,7 @@ const StripePayButtonSecond = () => {
       console.error("API Error:", error);
     }
   };
-  return (
-    <button
-      onClick={handlePayment}
-      className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
-    >
-      Pay with Stripe
-    </button>
-  );
+  return <button onClick={handlePayment}>Pay with Stripe</button>;
 };
 
 export default StripePayButtonSecond;

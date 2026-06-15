@@ -1,5 +1,6 @@
 "use client";
 
+import Script from "next/script";
 import { useState } from "react";
 /* eslint-disable @typescript-eslint/no-explicit-any -- req */
 declare global {
@@ -71,12 +72,16 @@ export default function PaytmButton() {
   };
 
   return (
-    <button
-      onClick={initiatePayment}
-      disabled={loading}
-      className="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition disabled:opacity-50"
-    >
-      {loading ? "Generating Token..." : "Pay Now"}
-    </button>
+    <>
+      <Script
+        type="application/javascript"
+        crossOrigin="anonymous"
+        src={`${process.env.NEXT_PUBLIC_PAYTM_HOST}/merchantpgpui/checkoutjs/merchants/${process.env.NEXT_PUBLIC_PAYTM_MERCHANT_ID}.js`}
+        strategy="afterInteractive"
+      />
+      <button onClick={initiatePayment} disabled={loading}>
+        {loading ? "Please Wait..." : "Pay Now"}
+      </button>
+    </>
   );
 }

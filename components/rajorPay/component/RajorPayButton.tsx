@@ -1,5 +1,6 @@
 "use client";
 
+import Script from "next/script";
 import { useState } from "react";
 
 declare global {
@@ -111,13 +112,20 @@ export default function RajorPayButton() {
   };
 
   return (
-    <button
-      onClick={initiatePayment}
-      disabled={loading}
-      className="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition disabled:opacity-50"
-    >
-      {loading ? "Loading..." : "Pay Now"}
-    </button>
+    <>
+      <Script
+        type="application/javascript"
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        strategy="afterInteractive"
+      />
+      <button
+        onClick={initiatePayment}
+        disabled={loading}
+        // className="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition disabled:opacity-50"
+      >
+        {loading ? "Loading..." : "Pay with Rajorpay"}
+      </button>
+    </>
   );
 }
 
