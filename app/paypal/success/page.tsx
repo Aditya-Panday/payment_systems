@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-export default function PaypalSuccessContent() {
+function PaypalSuccessContent() {
   const searchParams = useSearchParams();
 
   const [status, setStatus] = useState<"loading" | "success" | "failure">(
@@ -39,7 +39,7 @@ export default function PaypalSuccessContent() {
           setMessage(data.message || "Payment verification failed.");
         }
       } catch (error) {
-        console.error(error);
+        console.error("PayPal verification error:", error);
 
         setStatus("failure");
         setMessage("Something went wrong during verification.");
@@ -89,5 +89,22 @@ export default function PaypalSuccessContent() {
         </Link>
       </div>
     </main>
+  );
+}
+
+export default function PaypalSuccessPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen flex items-center justify-center bg-slate-50">
+          <div className="text-center space-y-4">
+            <div className="w-10 h-10 mx-auto border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
+            <p className="text-gray-500">Loading...</p>
+          </div>
+        </main>
+      }
+    >
+      <PaypalSuccessContent />
+    </Suspense>
   );
 }
