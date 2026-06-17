@@ -121,7 +121,7 @@ export default function RajorPayButton() {
       <button
         onClick={initiatePayment}
         disabled={loading}
-        // className="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition disabled:opacity-50"
+        className="cursor-pointer"
       >
         {loading ? "Loading..." : "Pay with Rajorpay"}
       </button>

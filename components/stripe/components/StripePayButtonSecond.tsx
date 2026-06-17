@@ -35,7 +35,11 @@ const StripePayButtonSecond = () => {
   };
 
   return (
-    <button onClick={handlePayment} disabled={loading}>
+    <button
+      onClick={handlePayment}
+      disabled={loading}
+      className="cursor-pointer"
+    >
       {loading ? "Redirecting to Stripe..." : "Pay with Stripe"}
     </button>
   );

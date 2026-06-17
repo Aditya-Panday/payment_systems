@@ -85,7 +85,11 @@ export default function PaytmButton() {
         src={`${process.env.NEXT_PUBLIC_PAYTM_HOST}/merchantpgpui/checkoutjs/merchants/${process.env.NEXT_PUBLIC_PAYTM_MERCHANT_ID}.js`}
         strategy="afterInteractive"
       />
-      <button onClick={initiatePayment} disabled={loading}>
+      <button
+        onClick={initiatePayment}
+        disabled={loading}
+        className="cursor-pointer"
+      >
         {loading ? "Please Wait..." : "Pay Now"}
       </button>
     </>
