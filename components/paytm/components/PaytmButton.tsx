@@ -13,6 +13,12 @@ export default function PaytmButton() {
   const [loading, setLoading] = useState(false);
 
   const initiatePayment = async () => {
+    if (process.env.NEXT_PUBLIC_PAYTM_MERCHANT_ID) {
+      alert("Not available right now.");
+
+      return;
+    }
+
     try {
       setLoading(true);
 

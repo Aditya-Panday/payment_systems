@@ -67,63 +67,11 @@ const gateways: Gateway[] = [
     buttonHover:
       "hover:bg-[#3395ff]/15 hover:border-[#3395ff]/40 hover:text-[#3395ff]",
   },
-  {
-    id: "phonepe",
-    name: "PhonePe",
-    description:
-      "India mein fastest growing — UPI ke saath BBPS bill payments bhi.",
-    tags: ["UPI", "BBPS", "₹ INR"],
-    icon: <Phone />,
-    accentColor: "bg-gradient-to-r from-[#5f259f] to-[#9e5ff7]",
-    iconBg: "bg-[#9e5ff7]/15",
-    iconColor: "text-[#9e5ff7]",
-    buttonHover:
-      "hover:bg-[#9e5ff7]/15 hover:border-[#9e5ff7]/40 hover:text-[#9e5ff7]",
-  },
-  {
-    id: "amazonpay",
-    name: "Amazon Pay",
-    description:
-      "Amazon ka trusted checkout — 300M+ customers ke liye instant 1-click payment.",
-    tags: ["1-Click", "Wallet", "EMI"],
-    icon: <ShoppingCart />,
-    accentColor: "bg-gradient-to-r from-[#ff9900] to-[#ffb84d]",
-    iconBg: "bg-[#ff9900]/10",
-    iconColor: "text-[#ff9900]",
-    buttonHover:
-      "hover:bg-[#ff9900]/15 hover:border-[#ff9900]/40 hover:text-[#ff9900]",
-  },
-  {
-    id: "cashfree",
-    name: "Cashfree",
-    description:
-      "India ka fastest payout gateway — real-time settlements aur 120+ payment modes.",
-    tags: ["Payouts", "120+ Modes", "₹ INR"],
-    icon: <Zap />,
-    accentColor: "bg-gradient-to-r from-[#00c2a8] to-[#00e5c8]",
-    iconBg: "bg-[#00c2a8]/10",
-    iconColor: "text-[#00c2a8]",
-    buttonHover:
-      "hover:bg-[#00c2a8]/15 hover:border-[#00c2a8]/40 hover:text-[#00c2a8]",
-  },
-  {
-    id: "klarna",
-    name: "Klarna",
-    description:
-      "Buy Now Pay Later leader — flexible installments aur zero interest options.",
-    tags: ["BNPL", "Installments", "EU/US"],
-    icon: <TagIcon />,
-    accentColor: "bg-gradient-to-r from-[#ffb3c7] to-[#ff6b9d]",
-    iconBg: "bg-[#ff6b9d]/10",
-    iconColor: "text-[#ff6b9d]",
-    buttonHover:
-      "hover:bg-[#ff6b9d]/15 hover:border-[#ff6b9d]/40 hover:text-[#ff6b9d]",
-  },
 ];
 
 // ── Stats ──────────────────────────────────────────────────
 const stats = [
-  { value: "8+", label: "Payment gateways" },
+  { value: "4", label: "Payment gateways" },
   { value: "99.9%", label: "Uptime guarantee" },
   { value: "2 min", label: "Setup time" },
 ];
@@ -161,14 +109,14 @@ export default function PaymentSection() {
           8 Gateways · One Dashboard
         </span>
         <h1 className="text-4xl md:text-[42px] font-medium leading-tight tracking-tight mb-4">
-          Sabse asan{" "}
+          Ever Easy{" "}
           <span className="bg-gradient-to-r from-[#5b9cff] to-[#a78bfa] bg-clip-text text-transparent">
-            payment integration
+            Payment Integrations
           </span>
         </h1>
         <p className="text-[15px] text-white/45 max-w-md mx-auto leading-relaxed">
-          Ek jagah se Paytm, Stripe, PayPal, Razorpay aur PhonePe manage karo —
-          bina jhanjhat ke.
+          Manage Paytm, Stripe, PayPal, Razorpay, and PhonePe from one place —
+          hassle-free.
         </p>
       </div>
 

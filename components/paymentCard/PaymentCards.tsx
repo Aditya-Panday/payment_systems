@@ -3,6 +3,7 @@ import PaytmButton from "../paytm/components/PaytmButton";
 import PaypalButton from "../paypal/components/PaypalButton";
 import RajorPayButton from "../rajorPay/component/RajorPayButton";
 import StripePayButtonSecond from "../stripe/components/StripePayButtonSecond";
+import { ZapIcon } from "lucide-react";
 
 export type Gateway = {
   id: string;
@@ -25,10 +26,6 @@ const ButtonHandler: Record<string, React.ReactNode> = {
   stripe: <StripePayButtonSecond />,
   paypal: <PaypalButton />,
   razorpay: <RajorPayButton />,
-  phonepe: <RajorPayButton />,
-  amazonpay: <RajorPayButton />,
-  cashfree: <RajorPayButton />,
-  klarna: <RajorPayButton />,
 };
 
 export default function PaymentCard({ gateway }: PaymentCardProps) {
@@ -84,28 +81,18 @@ export default function PaymentCard({ gateway }: PaymentCardProps) {
       </div>
 
       {/* Pay Now Button */}
-      <button
+      <div
         className={`
           w-full py-2.5 rounded-xl text-[13px] font-medium
-          border border-white/[0.18] bg-white/[0.07] text-white/85
+          border border-white/18 bg-white/[0.07] text-white/85
           flex items-center justify-center gap-2
           transition-all duration-200 cursor-pointer
           ${gateway.buttonHover}
         `}
       >
-        <svg
-          className="w-3.5 h-3.5"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-        </svg>
+        <ZapIcon size={14} />
         {ButtonHandler[gateway.id]}
-      </button>
+      </div>
     </div>
   );
 }
